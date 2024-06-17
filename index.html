@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPRFW9DK4Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GPRFW9DK4Q');
+  </script>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="DiffusionRig: Learning Personalized Priors for Facial Appearance Editing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DiffusionRig: Learning Personalized Priors for Facial Appearance Editing</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DiffusionRig: Learning Personalized Priors for Facial Appearance Editing
+		  <br>
+		  <small>CVPR 2023</small>
+		  </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="mailto:zhding@ucsd.edu">Zheng Ding</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ceciliavision.github.io">Xuaner Zhang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://likesum.github.io">Zhihao Xia</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://lcjebe.github.io">Lars Jebe</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://pages.ucsd.edu/~ztu">Zhuowen Tu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xiuming.info">Xiuming Zhang</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UC San Diego</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Adobe</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2304.06711.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="."
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=6ZQbiNiJJEE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/adobe-research/diffusion-rig"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="columns is-centered">
+    <div class="column is-7">
+      <video autoplay loop muted>
+        <source src="static/videos/teaser_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <h2 class="subtitle has-text-justified" style="font-size:18px;">
+        DiffusionRig takes in coarse physical rendering as the condition to “rig” the input image with learned personal priors. The edited
+images respect the rendering conditions, preserve the identity, and exhibit high-frequency facial details.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-11">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified" style="font-size:20px;">
+          We address the problem of learning person-specific facial priors from a small number (e.g., 20) of portrait photos of the same person. This enables us to edit this specific person's facial appearance, such as expression and lighting, while preserving their identity and high-frequency facial details. Key to our approach, which we dub DiffusionRig, is a diffusion model conditioned on, or "rigged by," crude 3D face models estimated from single in-the-wild images by an off-the-shelf estimator. On a high level, DiffusionRig learns to map simplistic renderings of 3D face models to realistic photos of a given person. Specifically, DiffusionRig is trained in two stages: It first learns generic facial priors from a large-scale face dataset and then person-specific priors from a small portrait photo collection of the person of interest. By learning the CGI-to-photo mapping with such personalized priors, DiffusionRig can "rig" the lighting, facial expression, head pose, etc. of a portrait photo, conditioned only on coarse 3D models while preserving this person's identity and other high-frequency characteristics. Qualitative and quantitative experiments show that DiffusionRig outperforms existing approaches in both identity preservation and photorealism. 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title is-3">Personalized Facial Appearance Editing</h3>
+    <div class="video_container">
+      
+      <div class="video_column">
+        
+        <video autoplay loop muted>
+          <source src="static/videos/obama_exp.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted>
+          <source src="static/videos/taylor_exp.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted>
+          <source src="static/videos/yoo_exp.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">Expression Change</h3>
+      </div>
+      <div class="video_column">
+        <video autoplay loop muted>
+          <source src="static/videos/obama_light.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted>
+          <source src="static/videos/taylor_light.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted>
+          <source src="static/videos/yoo_light.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">Lighting Change</h3>
+      </div>
+      <div class="video_column">
+        <video autoplay loop muted>
+          <source src="static/videos/obama_pose.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted>
+          <source src="static/videos/taylor_pose.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted>
+          <source src="static/videos/yoo_pose.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3 class="title is-4">Pose Change</h3>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <h3 class="title is-3">Mix and Match: <br> Physical Buffers and Global Latent Code</h3>
+        <video autoplay loop muted>
+          <source src="static/videos/animation_mixmatch.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2 class="subtitle has-text-justified" style="font-size:18px;">
+          We mix the physical buffers from one image and the global latent code from another image to demonstrate how the two conditions encode disentangled information.
+        </h2>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <h3 class="title is-3">Swapping Personalized Models</h3>
+        <video autoplay loop muted>
+          <source src="static/videos/animation_fy.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2 class="subtitle has-text-justified" style="font-size:18px;">
+          We demonstrate the power of personalized priors by running one person’s model on other identities. This creates the effect of “adding” one person’s identity to another person. 
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@InProceedings{ding2023diffusionrig,
+      author    = {Zheng Ding, Cecilia Zhang, Zhihao Xia, Lars Jebe, Zhuowen Tu and Xiuming Zhang},
+      title     = {DiffusionRig: Learning Personalized Priors for Facial Appearance Editing},
+      booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+      year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website's source code is borrowed from the <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
