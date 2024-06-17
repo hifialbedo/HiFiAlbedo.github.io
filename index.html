@@ -59,7 +59,7 @@
             </span>,
             <span class="author-block">
               <a href="https://pages.ucsd.edu/~ztu">Xiangzi Dai</a>
-            </span>,
+            </span>,<br>
             <span class="author-block">
               <a href="https://xiuming.info">Ziyong Feng</a>
             </span>,
@@ -168,7 +168,25 @@ images respect the rendering conditions, preserve the identity, and exhibit high
       <div class="column is-11">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified" style="font-size:20px;">
-          We address the problem of learning person-specific facial priors from a small number (e.g., 20) of portrait photos of the same person. This enables us to edit this specific person's facial appearance, such as expression and lighting, while preserving their identity and high-frequency facial details. Key to our approach, which we dub DiffusionRig, is a diffusion model conditioned on, or "rigged by," crude 3D face models estimated from single in-the-wild images by an off-the-shelf estimator. On a high level, DiffusionRig learns to map simplistic renderings of 3D face models to realistic photos of a given person. Specifically, DiffusionRig is trained in two stages: It first learns generic facial priors from a large-scale face dataset and then person-specific priors from a small portrait photo collection of the person of interest. By learning the CGI-to-photo mapping with such personalized priors, DiffusionRig can "rig" the lighting, facial expression, head pose, etc. of a portrait photo, conditioned only on coarse 3D models while preserving this person's identity and other high-frequency characteristics. Qualitative and quantitative experiments show that DiffusionRig outperforms existing approaches in both identity preservation and photorealism. 
+          Recent 3D face reconstruction methods have made significant progress in
+shape estimation, but high-fidelity facial albedo reconstruction remains chal-
+lenging. Existing methods depend on expensive light-stage captured data
+to learn facial albedo maps. However, a lack of diversity in subjects limits
+their ability to recover high-fidelity results. In this paper, we present a novel
+facial albedo reconstruction model, HiFiAlbedo, which recovers the albedo
+map directly from a single image without the need for captured albedo
+data. Our key insight is that the albedo map is the illumination invariant
+texture map, which enables us to use inexpensive texture data to derive an albedo estimation by eliminating illumination. To achieve this, we first col-
+lect large-scale ultra-high-resolution facial images and train a high-fidelity
+facial texture codebook. By using the FFHQ dataset and limited UV textures,
+we then fine-tune the encoder for texture reconstruction from the input
+image with adversarial supervision in both image and UV space. Finally, we
+train a cross-attention module and utilize group identity loss to learn the
+adaptation from facial texture to the albedo domain. Extensive experimenta-
+tion has demonstrated that our method exhibits excellent generalizability
+and is capable of achieving high-fidelity results for in-the-wild facial albedo
+recovery. Our code, pre-trained weights, and training data will be made
+publicly available.
         </div>
       </div>
     </div>
