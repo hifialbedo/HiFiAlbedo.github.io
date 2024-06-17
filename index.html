@@ -46,25 +46,25 @@
 		  </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a>Zimin Ran</a>
+              Zimin Ran
             </span>,
             <span class="author-block">
               <a href="https://xingyuren.github.io/">Xingyu Ren</a>
             </span>,
             <span class="author-block">
-              <a>Xiang An</a>
+              Xiang An
             </span>,
             <span class="author-block">
               <a href="https://kaicheng-yang0828.github.io/">Kaicheng Yang</a>
             </span>,
             <span class="author-block">
-              <a>Xiangzi Dai</a>
+              Xiangzi Dai
             </span>,<br>
             <span class="author-block">
-              <a>Ziyong Feng</a>
+              Ziyong Feng
             </span>,
             <span class="author-block">
-              <a>Jia Guo</a>
+              Jia Guo
             </span>,
             <span class="author-block">
               <a href="https://ffmpbgrnn.github.io/">Linchao Zhu</a>
@@ -168,25 +168,7 @@ images respect the rendering conditions, preserve the identity, and exhibit high
       <div class="column is-11">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified" style="font-size:20px;">
-          Recent 3D face reconstruction methods have made significant progress in
-shape estimation, but high-fidelity facial albedo reconstruction remains chal-
-lenging. Existing methods depend on expensive light-stage captured data
-to learn facial albedo maps. However, a lack of diversity in subjects limits
-their ability to recover high-fidelity results. In this paper, we present a novel
-facial albedo reconstruction model, HiFiAlbedo, which recovers the albedo
-map directly from a single image without the need for captured albedo
-data. Our key insight is that the albedo map is the illumination invariant
-texture map, which enables us to use inexpensive texture data to derive an albedo estimation by eliminating illumination. To achieve this, we first col-
-lect large-scale ultra-high-resolution facial images and train a high-fidelity
-facial texture codebook. By using the FFHQ dataset and limited UV textures,
-we then fine-tune the encoder for texture reconstruction from the input
-image with adversarial supervision in both image and UV space. Finally, we
-train a cross-attention module and utilize group identity loss to learn the
-adaptation from facial texture to the albedo domain. Extensive experimenta-
-tion has demonstrated that our method exhibits excellent generalizability
-and is capable of achieving high-fidelity results for in-the-wild facial albedo
-recovery. Our code, pre-trained weights, and training data will be made
-publicly available.
+          Recent 3D face reconstruction methods have made significant progress in shape estimation, but high-fidelity facial albedo reconstruction remains challenging. Existing methods depend on expensive light-stage captured data to learn facial albedo maps. However, a lack of diversity in subjects limits their ability to recover high-fidelity results. In this paper, we present a novel facial albedo reconstruction model, HiFiAlbedo, which recovers the albedo map directly from a single image without the need for captured albedo data. Our key insight is that the albedo map is the illumination invariant texture map, which enables us to use inexpensive texture data to derive an albedo estimation by eliminating illumination. To achieve this, we first collect large-scale ultra-high-resolution facial images and train a high-fidelity facial texture codebook. By using the FFHQ dataset and limited UV textures, we then fine-tune the encoder for texture reconstruction from the input image with adversarial supervision in both image and UV space. Finally, we train a cross-attention module and utilize group identity loss to learn the adaptation from facial texture to the albedo domain. Extensive experimentation has demonstrated that our method exhibits excellent generalizability and is capable of achieving high-fidelity results for in-the-wild facial albedo recovery. Our code, pre-trained weights, and training data will be made publicly available.
         </div>
       </div>
     </div>
