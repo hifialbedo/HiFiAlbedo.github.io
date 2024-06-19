@@ -34,41 +34,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Layout</title>
   <style>
-      .container {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-      }
-
-      .video_container {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-      }
-
-      .text_column {
-          display: flex;
-          flex-direction: column;
-          margin-right: 10px; /* Adjust this as needed */
-      }
-
-      .video_column {
-          display: flex;
-          flex-direction: column;
-      }
-
-      video {
-          width: 100px; /* Adjust width as needed */
-          height: 100px; /* Adjust height as needed */
-          margin-bottom: 10px; /* Adjust as needed */
-      }
-
-      p {
-          margin: 0;
-      }
+    .container {
+      display: flex;
+      justify-content: center; /* 水平居中 */
+      align-items: center;    /* 垂直居中 */
+    }
+    .text_column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;  /* 中心对齐列中的内容 */
+      margin: 0 0;       /* 调整列之间的间距 */
+    }
+    .video_column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;  /* 中心对齐列中的内容 */
+      margin: 0 0;       /* 调整列之间的间距 */
+    }
+    p {
+      margin: 20px 0;       /* 调整每段文字的间距 */
+    }
   </style>
+  <title>Centered Text and Videos</title>
 </head>
 
 
@@ -237,7 +225,7 @@ images respect the rendering conditions, preserve the identity, and exhibit high
       <!-- <h3 class="title is-3">Personalized Facial Appearance Editing</h3> -->
       <div class="video_container">
 
-        <div class="text_column">
+        <div class="text_column"  style="flex: 0 0 20%;">
           <p>Single-Image Albedo</p>
           <p>Multi-Image Albedo</p>
           <p>Render 1</p>
