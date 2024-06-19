@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .text {
+    margin-right: 10px; /* 可根据需要调整间距 */
+  }
+</style>
+<title>Video with Text</title>
+
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPRFW9DK4Q"></script>
@@ -197,10 +210,14 @@ images respect the rendering conditions, preserve the identity, and exhibit high
       <div class="video_container">
 
         <div class="video_column">
-          <video autoplay loop muted>
-            <source src="static/videos/id_00_00.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div class="container">
+            <div class="text">左边的一行字</div>
+            <video autoplay loop muted>
+              <source src="static/videos/id_00_00.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
           <video autoplay loop muted>
             <source src="static/videos/id_00_01.mp4" type="video/mp4">
             Your browser does not support the video tag.
