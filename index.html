@@ -34,29 +34,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Layout</title>
   <style>
-    .container {
-      display: flex;
-      justify-content: center; /* 水平居中 */
-      align-items: center;    /* 垂直居中 */
-    }
-    .text_column {
-      display: flex;
-      flex-direction: column;
-      align-items: center;  /* 中心对齐列中的内容 */
-      margin: 0 30;       /* 调整列之间的间距 */
-    }
-    .video_column {
-      display: flex;
-      flex-direction: column;
-      align-items: center;  /* 中心对齐列中的内容 */
-      margin: 0 0;       /* 调整列之间的间距 */
-    }
-    p {
-      margin: 20px 0;       /* 调整每段文字的间距 */
-    }
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+      }
+
+      .video_container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+
+      .text_column {
+          display: flex;
+          flex-direction: column;
+          margin-right: 10px; /* Adjust this as needed */
+      }
+
+      .video_column {
+          display: flex;
+          flex-direction: column;
+      }
+
+      video {
+          width: 100px; /* Adjust width as needed */
+          height: 100px; /* Adjust height as needed */
+          margin-bottom: 10px; /* Adjust as needed */
+      }
+
+      p {
+          margin: 0;
+      }
   </style>
-  <title>Centered Text and Videos</title>
 </head>
 
 
@@ -249,7 +261,6 @@ images respect the rendering conditions, preserve the identity, and exhibit high
             <source src="static/videos/id_00_03.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <!-- <h3 class="title is-4">Expression Change</h3> -->
         </div>
 
 
@@ -270,7 +281,6 @@ images respect the rendering conditions, preserve the identity, and exhibit high
             <source src="static/videos/id_01_03.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <!-- <h3 class="title is-4">Lighting Change</h3> -->
         </div>
 
 
@@ -291,7 +301,6 @@ images respect the rendering conditions, preserve the identity, and exhibit high
             <source src="static/videos/id_02_03.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <!-- <h3 class="title is-4">Pose Change</h3> -->
         </div>
 
 
@@ -312,48 +321,10 @@ images respect the rendering conditions, preserve the identity, and exhibit high
             <source src="static/videos/id_03_03.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <!-- <h3 class="title is-4">Lighting Change</h3> -->
         </div>
       </div>
-
       <br>
       <br>
-
-      <!-- <div class="columns is-centered">
-        <div class="column is-9">
-          <h3 class="title is-3">Mix and Match: <br> Physical Buffers and Global Latent Code</h3>
-          <video autoplay loop muted>
-            <source src="static/videos/animation_mixmatch.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h2 class="subtitle has-text-justified" style="font-size:18px;">
-            We mix the physical buffers from one image and the global latent code from another image to demonstrate how
-            the two conditions encode disentangled information.
-          </h2>
-        </div>
-      </div>
-
-      <br>
-      <br>
-
-      <div class="columns is-centered">
-        <div class="column is-9">
-          <h3 class="title is-3">Swapping Personalized Models</h3>
-          <video autoplay loop muted>
-            <source src="static/videos/animation_fy.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h2 class="subtitle has-text-justified" style="font-size:18px;">
-            We demonstrate the power of personalized priors by running one person’s model on other identities. This
-            creates the effect of “adding” one person’s identity to another person.
-          </h2>
-        </div>
-      </div>
-    </div> -->
-
-
-
-
   </section>
 
 
